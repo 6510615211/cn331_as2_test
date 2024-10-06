@@ -5,7 +5,34 @@
 {% endblock %}
 
 {% block content %}
-    <h1>ระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแสดงรายวิชา</h1>
-    <p>รายวิชาทั้งหมด</p>
-   {{subjects}}
+    <h1 class="text-center">ระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแสดงรายวิชา</h1>
+    <p class="text-center">รายวิชาทั้งหมดที่เปิดให้ลงทะบียน</p>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">course_id</th>
+            <th scope="col">subject</th>
+    
+            <th scope="col">semeter</th>
+            <th scope="col">amount</th>
+            <th scope="col">status</th>
+            <th scope="col">ขอโควต้า</th>
+            <th scope="col">ยกเลิกโควต้า</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for subject in subjects%}
+                <tr>
+                    <th scope="">{{subject.course_id}}</th>
+                    <td>{{subject.course_name}}</td>
+                    <td>{{subject.course_field}}</td>
+                    <td>{{subject.course_semester}}</td>    
+                    <td>{{subject.course_amount}}</td>
+                    <td>{{subject.course_status}}</td>
+                    <td><a href='#' class='btn btn-success'>ขอโควต้า</a></td>
+                    <td><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
 {% endblock %}

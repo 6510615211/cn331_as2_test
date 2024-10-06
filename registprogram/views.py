@@ -8,5 +8,16 @@ def index(request):
 
 def course(request):
     subjects = Subject.objects.all()
-    return render(request, "course.html", {"subjects": subjects})
+    return render(request, "course.html", {"subjects":subjects})
 
+def about(request):
+    return render(request, "about.html")
+
+def recheck(request):
+    #if request.method == "POST":
+        
+    return render(request, "recheck.html")
+
+
+
+ 
